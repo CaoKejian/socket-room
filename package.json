@@ -1,5 +1,5 @@
 {
-  "name": "colincao-barchart",
+  "name": "chat-room",
   "version": "0.0.0",
   "description": "my-barchart-plugin",
   "type": "module",
@@ -11,6 +11,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite",
+    "server": "node ./client/server.js",
     "build": "vue-tsc && vite build",
     "preview": "vite preview"
   },

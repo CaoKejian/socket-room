@@ -4,7 +4,7 @@ import axios from 'axios'
 export const App = defineComponent({
   setup: (props, context) => {
     const socket = ref<WebSocket | null>(null)
-    const messages = ref<{ text: string, _id: string }[]>([])
+    const messages = ref<{ text: string, _id: string }[]>([]) // 单独两人的数据组
     const newMessage = ref<string>('')
     const initInfo = async () => {
       const res = await axios.get('http://localhost:8080/api/info')
@@ -37,8 +37,9 @@ export const App = defineComponent({
 
     return () => (
       <div>
-        <input type="text" v-model={newMessage.value} />
+        <input type="text" v-model={newMessage.value} placeholder='用户1' />
         <button onClick={sendMessage}>submit</button>
+
 
         <ul>
           {messages.value.map(item => {
